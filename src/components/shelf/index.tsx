@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react"
-import styles from "./styles.module.css"
+import style from "./styles.module.css"
 
-const Home = () => { 
+const Shelf = () => { 
  const [data, setData] = useState([]);
  
 
@@ -15,17 +15,17 @@ const Home = () => {
  //console.log(data, "hola")
 
     return (
-        <div>
-            Home hola mundo
-            <div>
+        <div >
+           <h1 className={style.titleshelf}>Artesanías Elenartes Epox</h1> 
+            <div className={style.containercard}>
             {data.map((element:any) => {  
                    
                 return (
 
-                    <div className={styles.card}>
-                        <div>{element.title}</div>
-                        <img className={styles.img}  src={element.image} alt={element.title} />
-                        <div>{element.price}</div>
+                    <div className={style.card}>
+                        <img className={style.imgecard}  src={element.image} alt={element.title} />
+                        <div className={style.titlecard}>{element.title}</div>
+                        <div className={style.pricecard}>{element.price}</div>
                     </div>
                 )
             } )}
@@ -33,5 +33,4 @@ const Home = () => {
         </div>
     )
 }
-
-export default Home
+export default Shelf
